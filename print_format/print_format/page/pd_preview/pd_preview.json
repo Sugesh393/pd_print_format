@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-08-28 11:25:56.033290",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-09-06 12:24:55.000602",
+ "modified_by": "Administrator",
+ "module": "Print Format",
+ "name": "pd-preview",
+ "owner": "Administrator",
+ "page_name": "pd-preview",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "PD Format Previewer"
+}
