@@ -1,0 +1,22 @@
+/* ../../../../../tmp/tmp-4697-Ns4xZZdysav3/print_format/print_format/public/css/print_designer.bundle.css */
+.print-designer-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 40px 0;
+  background-color: var(--control-bg);
+  border-radius: var(--border-radius);
+}
+.print-designer-wrapper .preview-container {
+  margin: 0px 10px;
+}
+@media only screen and (min-width: 700px) {
+  .print-designer-wrapper {
+    padding: 80px 0;
+    align-items: center;
+  }
+  .print-designer-wrapper .preview-container {
+    margin: 0px;
+  }
+}
+/*# sourceMappingURL=print_designer.bundle.AB7IVVTH.css.map */

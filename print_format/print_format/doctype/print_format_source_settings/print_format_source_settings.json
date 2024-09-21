@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-12 15:42:20.055070",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_h62z",
+  "git_repo_url",
+  "access_token",
+  "fetch_files",
+  "templates"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_h62z",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "git_repo_url",
+   "fieldtype": "Data",
+   "label": "Git Repo URL"
+  },
+  {
+   "fieldname": "access_token",
+   "fieldtype": "Data",
+   "label": "Access Token"
+  },
+  {
+   "fieldname": "templates",
+   "fieldtype": "Table",
+   "label": "Templates",
+   "options": "Print Format Templates"
+  },
+  {
+   "fieldname": "fetch_files",
+   "fieldtype": "Button",
+   "label": "Fetch files"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-09-13 12:08:08.208851",
+ "modified_by": "Administrator",
+ "module": "Print Format",
+ "name": "Print Format Source Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
