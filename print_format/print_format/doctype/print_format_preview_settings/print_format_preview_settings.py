@@ -3,12 +3,13 @@
 
 import frappe, requests
 from frappe.model.document import Document
+from frappe.utils.password import get_decrypted_password
 
 @frappe.whitelist()
 def get_gitInfo():
-	doc = frappe.get_doc("Print Format Source Settings").as_dict()
-	url = doc["git_repo_url"]
-	token = doc["access_token"]
+	doc = frappe.get_doc("Print Format Preview Settings").as_dict()
+	url = doc["github_repo"]
+	token = get_decrypted_password("Print Format Preview Settings", "Print Format Preview Settings", "access_token")
 	url = url.replace("https://github.com/", "")
 	api_url = f"https://api.github.com/repos/{url}/contents/"
 
@@ -22,6 +23,7 @@ def get_gitInfo():
 	child_table = []
 	ref = {}
 	for folder in folders:
+		print(folder)
 		if folder["type"] == "dir":
 			files = requests.get(folder["url"], headers=headers).json()
 			for file in files:
@@ -30,8 +32,8 @@ def get_gitInfo():
 				ref["url"] = file["download_url"]
 				child_table.append(ref)
 				ref = {}
-
+	print(child_table)
 	return child_table
 
-class PrintFormatSourceSettings(Document):
+class PrintFormatPreviewSettings(Document):
 	pass

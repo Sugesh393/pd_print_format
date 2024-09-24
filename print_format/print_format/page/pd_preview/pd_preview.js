@@ -65,7 +65,7 @@ frappe.ui.form.DesignerView = class {
 			fieldtype: "Link",
 			fieldname: "doctype",
 			options: "DocType",
-			label: __("Doctype"),
+			label: __("DocType"),
 			reqd: 1,
 			
 			get_query: () => {
@@ -111,7 +111,7 @@ frappe.ui.form.DesignerView = class {
 			fieldtype: "Dynamic Link",
 			fieldname: "docname",
 			options: "doctype",
-			label: __("DocName"),
+			label: __("Docname"),
 			reqd: 1,
 			change: () => {
                 if(this.docname_item.value == this.docname_item.last_value) return;
@@ -147,7 +147,7 @@ frappe.ui.form.DesignerView = class {
 			fieldtype: "Link",
 			fieldname: "print_format",
 			options: "Print Format Templates",
-			label: __("Print Designer Format"),
+			label: __("Preview Format"),
 			reqd: 1,
 			get_query: () => {
 				return { filters: { document_type: this.doctype_selector.val() } };
@@ -184,20 +184,24 @@ frappe.ui.form.DesignerView = class {
 		})
         this.print_format_selector = this.print_format_item.$input;
 		
-		this.language_item = this.add_sidebar_item({
-			fieldtype: "Link",
-			fieldname: "language",
-			label: __("Language"),
-			options: "Language",
-			change: () => {
-                if (this.language_item.value == this.language_item.last_value) return;
-				if (this.language_item.value != "") {
-					this.set_user_lang();
-					this.preview();
-				}
-			},
-		})
-        this.language_selector = this.language_item.$input;
+		frappe.db.get_single_value("Print Format Preview Settings", "customisation_request")
+			.then((value) => {
+				this.language_item = this.add_sidebar_item({
+					fieldtype: "Link",
+					fieldname: "language",
+					label: __("Language"),
+					options: "Language",
+					description: `<p> Raise a customisation request to this format <a href="${value}" target="_blank">here</a></p>`,
+					change: () => {
+						if (this.language_item.value == this.language_item.last_value) return;
+						if (this.language_item.value != "") {
+							this.set_user_lang();
+							this.preview();
+						}
+					},
+				})
+				this.language_selector = this.language_item.$input;
+		});
     }
 
     import_format(name, doctype) {

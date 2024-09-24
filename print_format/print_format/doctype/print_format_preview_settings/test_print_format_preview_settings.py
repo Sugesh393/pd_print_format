@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestPrintFormatSourceSettings(FrappeTestCase):
+class TestPrintFormatPreviewSettings(FrappeTestCase):
 	pass

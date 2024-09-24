@@ -1,7 +1,7 @@
 import frappe, os
 import requests
 import frappe.printing.doctype.print_format.print_format as print_format
-from frappe.utils import file_manager
+from frappe.utils.password import get_decrypted_password
 
 @frappe.whitelist()
 def get_print_format(format):
@@ -12,8 +12,8 @@ def get_print_format(format):
 
 @frappe.whitelist()
 def get_template_json(template, doctype):
-	doc = frappe.get_doc("Print Format Source Settings").as_dict()
-	token = doc["access_token"]
+	doc = frappe.get_doc("Print Format Preview Settings").as_dict()
+	token = get_decrypted_password("Print Format Preview Settings", "Print Format Preview Settings", "access_token")
 	
 	for child in doc["templates"]:
 		if child["template_name"] == template and child["document_type"] == doctype:

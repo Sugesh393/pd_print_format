@@ -6,10 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_h62z",
-  "git_repo_url",
+  "github_repo",
   "access_token",
   "fetch_files",
-  "templates"
+  "templates",
+  "customisation_request"
  ],
  "fields": [
   {
@@ -17,13 +18,8 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "git_repo_url",
-   "fieldtype": "Data",
-   "label": "Git Repo URL"
-  },
-  {
    "fieldname": "access_token",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "label": "Access Token"
   },
   {
@@ -36,15 +32,26 @@
    "fieldname": "fetch_files",
    "fieldtype": "Button",
    "label": "Fetch files"
+  },
+  {
+   "fieldname": "github_repo",
+   "fieldtype": "Data",
+   "label": "Github Repository"
+  },
+  {
+   "fieldname": "customisation_request",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Customisation Request Form "
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-09-13 12:08:08.208851",
+ "modified": "2024-09-23 15:33:03.293527",
  "modified_by": "Administrator",
  "module": "Print Format",
- "name": "Print Format Source Settings",
+ "name": "Print Format Preview Settings",
  "owner": "Administrator",
  "permissions": [
   {

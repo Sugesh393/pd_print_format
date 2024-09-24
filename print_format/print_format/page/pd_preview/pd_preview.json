@@ -4,7 +4,7 @@
  "docstatus": 0,
  "doctype": "Page",
  "idx": 0,
- "modified": "2024-09-06 12:24:55.000602",
+ "modified": "2024-09-23 10:17:53.974185",
  "modified_by": "Administrator",
  "module": "Print Format",
  "name": "pd-preview",
@@ -15,5 +15,5 @@
  "standard": "Yes",
  "style": null,
  "system_page": 1,
- "title": "PD Format Previewer"
+ "title": ""
 }
